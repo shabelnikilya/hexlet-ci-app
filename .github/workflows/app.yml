@@ -1,0 +1,15 @@
+name: hexlet-application
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu/latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup
+        run: make setup
+      - name: start tests
+        run: make test
+      - name: start lint
+        run: make lint
